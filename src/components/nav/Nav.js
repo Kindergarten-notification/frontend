@@ -37,7 +37,7 @@ const Nav = () => {
   };
 
   return (
-    <div className="nav">
+    <div className={`nav ${show && "nav_white"}`}>
       <img onClick={handleMain} className="nav-logo" src={LogoImg} alt="LOGO" />
       <button onClick={handleJoin} className="nav-join">
         <span>Join</span>

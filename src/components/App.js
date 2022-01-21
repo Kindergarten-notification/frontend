@@ -8,12 +8,14 @@ import {
   NotFoundPage,
   NotGrantedPage,
 } from "../pages";
+import Nav from "./nav/Nav";
 
 class App extends Component {
   render() {
     return (
       <div>
         <Router>
+          <Nav />
           <Switch>
             <Route exact path="/" component={MainPage} />
             <Route exact path="/detail" component={DetailPage} />

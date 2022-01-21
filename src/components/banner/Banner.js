@@ -29,7 +29,7 @@ const Banner = () => {
         backgourndPosition: "center center",
       }}
     >
-      <img className="banner-image" src={BannerImg} alt="NETFLIX" />
+      <img className="banner-image" src={BannerImg} alt="BANNER" />
     </div>
   );
 };

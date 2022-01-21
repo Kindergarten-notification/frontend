@@ -96,9 +96,9 @@ export function auth() {
 /**
  * main page request
  */
-export function getMainPage() {
+export function getMainPage(page) {
   const response = axios
-    .get("/api/kinders")
+    .get(`/api/kinders?page=${page}`)
     .then((res) => res.data)
     .catch((err) => console.log("failed load main page", err));
   return {
@@ -146,7 +146,7 @@ export function getHomePage(id) {
  */
 export function getPosts(id) {
   const response = axios
-    .get(`/api/posts`, null, { params: { kinder_id: id } })
+    .get(`/api/posts?kinder_id=${id}`)
     .then((res) => res.data)
     .catch((err) => console.log("failed get post list", err));
 
@@ -162,9 +162,7 @@ export function getPosts(id) {
  */
 export function getNotifications(id) {
   const response = axios
-    .get(`/api/notifications`, null, {
-      params: { kinder_id: id },
-    })
+    .get(`/api/notificatoins?kinder_id=${id}`)
     .then((res) => res.data)
     .catch((err) => console.log("failed get notificatoin list", err));
 
@@ -180,9 +178,7 @@ export function getNotifications(id) {
  */
 export function getAlbums(id) {
   const response = axios
-    .get(`/api/albums`, null, {
-      params: { kinder_id: id },
-    })
+    .get(`/api/albums?kinder_id=${id}`)
     .then((res) => res.data)
     .catch((err) => console.log("failed get album list", err));
 
@@ -204,27 +200,21 @@ export function getPost(method, post_id, kinder_id, user_id) {
   switch (method) {
     case "GET":
       response = axios
-        .get(`/api/post/${post_id}`, null, {
-          params: { kinder_id: kinder_id },
-        })
+        .get(`/api/post/${post_id}?kinder_id=${kinder_id}`)
         .then((res) => res.data)
         .catch((err) => console.log("failed get post", err));
       break;
-    case "POST":
+    case "POST": // post, patch 에서 kinder_id 필요 없을듯
       response = axios
-        .post(`/api/post`, null, {
-          params: { kinder_id: kinder_id, user_id: user_id },
-        })
+        .post(`/api/post/${post_id}?kinder_id=${kinder_id}&user_id=${user_id}`)
         .then((res) => {
           console.log("Completed create !");
         })
         .catch((err) => console.log("failed get post", err));
       break;
-    case "PUT":
+    case "PATCH":
       response = axios
-        .put(`/api/post/${post_id}`, null, {
-          params: { kinder_id: kinder_id },
-        })
+        .patch(`/api/post/${post_id}?kinder_id=${kinder_id}&user_id=${user_id}`)
         .then((res) => {
           console.log("Completed update !");
         })
@@ -232,9 +222,7 @@ export function getPost(method, post_id, kinder_id, user_id) {
       break;
     case "DELETE":
       response = axios
-        .delete(`/api/post/${post_id}`, null, {
-          params: { kinder_id: kinder_id },
-        })
+        .delete(`/api/post/${post_id}?user_id=${user_id}`)
         .then((res) => {
           console.log("Completed delete !");
         })
@@ -262,25 +250,23 @@ export function getNotification(method, notification_id, kinder_id, user_id) {
   switch (method) {
     case "GET":
       response = axios
-        .get(`/api/notification/${notification_id}`, null, {
-          params: { kinder_id: kinder_id },
-        })
+        .get(`/api/notification/${notification_id}?kinder_id=${kinder_id}`)
         .then((res) => res.data);
       break;
     case "POST":
       response = axios
-        .post(`/api/notification`, null, {
-          params: { kinder_id: kinder_id, user_id: user_id },
-        })
+        .post(
+          `/api/notification/${notification_id}?kinder_id=${kinder_id}&user_id=${user_id}`
+        )
         .then((res) => {
           console.log("Completed create !");
         });
       break;
-    case "PUT":
+    case "PATCH":
       response = axios
-        .put(`/api/notification/${notification_id}`, null, {
-          params: { kinder_id: kinder_id },
-        })
+        .patch(
+          `/api/notification/${notification_id}?kinder_id=${kinder_id}&user_id=${user_id}`
+        )
         .then((res) => {
           console.log("Completed update !");
         });
@@ -288,9 +274,7 @@ export function getNotification(method, notification_id, kinder_id, user_id) {
       break;
     case "DELETE":
       response = axios
-        .delete(`/api/notification/${notification_id}`, null, {
-          params: { kinder_id: kinder_id },
-        })
+        .delete(`/api/notification/${notification_id}?user_id=${user_id}`)
         .then((res) => {
           console.log("Completed delete !");
         });
@@ -318,25 +302,23 @@ export function getAlbum(method, album_id, kinder_id, user_id) {
   switch (method) {
     case "GET":
       response = axios
-        .get(`/api/album/${album_id}`, null, {
-          params: { kinder_id: kinder_id },
-        })
+        .get(`/api/album/${album_id}?kinder_id=${kinder_id}`)
         .then((res) => res.data);
       break;
     case "POST":
       response = axios
-        .post(`/api/album`, null, {
-          params: { kinder_id: kinder_id, user_id: user_id },
-        })
+        .post(
+          `/api/album/${album_id}?kinder_id=${kinder_id}&user_id=${user_id}`
+        )
         .then((res) => {
           console.log("Completed create !");
         });
       break;
-    case "PUT":
+    case "PATCH":
       response = axios
-        .put(`/api/album/${album_id}`, null, {
-          params: { kinder_id: kinder_id },
-        })
+        .patch(
+          `/api/album/${album_id}?kinder_id=${kinder_id}&user_id=${user_id}`
+        )
         .then((res) => {
           console.log("Completed update !");
         });
@@ -344,9 +326,7 @@ export function getAlbum(method, album_id, kinder_id, user_id) {
       break;
     case "DELETE":
       response = axios
-        .delete(`/api/album/${album_id}`, null, {
-          params: { kinder_id: kinder_id },
-        })
+        .delete(`/api/album/${album_id}?user_id=${user_id}`)
         .then((res) => {
           console.log("Completed delete !");
         });
