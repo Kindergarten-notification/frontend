@@ -1,17 +1,18 @@
 /* Main.js
  * - 메인 페이지
  */
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { FaHome } from 'react-icons/fa';
 
-import Banner from "../components/banner/Banner";
-import Header from "../components/header/Header";
-import { getMainPage } from "../_actions/actions";
+import Banner from '../components/banner/Banner';
+import Header from '../components/header/Header';
+import { getMainPage } from '../_actions/actions';
 
-import homeImg from "../static/img/Netflix-avatar.png";
-import "./style/mainpage.css";
+import homeImg from '../static/img/Netflix-avatar.png';
+import './style/mainpage.css';
 
 // import "./mainpage.css";
 
@@ -34,9 +35,11 @@ const MainPage = () => {
   }, []);
 
   function handleKinderInfo(k) {
-    console.log(k.id);
-    setCurrPage(k.id);
-    history.push("/detail", k.id);
+    history.push('/detail', k.id);
+  }
+
+  function handleHomePage(k) {
+    history.push('/home', k);
   }
 
   return (
@@ -44,19 +47,29 @@ const MainPage = () => {
       <Header />
       <Banner />
       <div className="main-kinders-header">
-        <h5>유치원 목록</h5>
+        <h4>
+          <b>유치원 목록</b>
+        </h4>
       </div>
+
       <div className="main-kinders">
         {kinders.length > 0 ? (
           kinders.map((k) => (
             <div className="main-kinderInfo">
-              <div onClick={() => handleKinderInfo(k)}>
-                <div id="main-kinderInfo-name">{k.kinder_name}</div>
-                <div className="main-kinderInfo-detail">
-                  <p id="main-kinderInfo-addr">{k.addr}</p>
-                  <p id="main-kinderInfo-tel_no">{k.tel_no}</p>
-                </div>
+              <div
+                id="main-kinderInfo-name"
+                onClick={() => handleKinderInfo(k)}
+              >
+                {k.kinder_name}
               </div>
+              <div className="main-kinderInfo-detail">
+                <p id="main-kinderInfo-addr">{k.addr}</p>
+                <p id="main-kinderInfo-tel_no">{k.tel_no}</p>
+              </div>
+              <span id="minihomeicon" onClick={() => handleHomePage(k)}>
+                <FaHome />
+              </span>
+
               {/* <div className="main-kinderInfo-img">
                 <img id="main-kinderInfo-img" src={homeImg} alt="HOMEPAGE" />
               </div> */}

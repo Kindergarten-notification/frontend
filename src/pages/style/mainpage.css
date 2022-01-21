@@ -3,41 +3,53 @@
   margin: 0 20%;
   padding-top: 5%;
   padding-bottom: 1rem;
-
-  border-bottom: 1px solid #83f261;
+  border-bottom: 5px solid #83f261;
 }
 
 .main-kinderInfo {
   justify-content: center;
   /* text-align: center; */
-  margin: 0 15%;
-  padding: 15px 50px;
+  margin: 0 25%;
+  padding: 20px 50px;
   cursor: pointer;
-  border-top: 1px solid #83f261;
+  /* border-top: 1px solid #83f261; */
   border-bottom: 1px solid #83f261;
 }
 
 .main-kinderInfo-detail {
   display: inline-block;
-  margin-left: 15%;
+  margin-left: 5%;
 }
 
 #main-kinderInfo-name {
   display: inline-block;
   font-weight: bold;
-  font-size: 0.95rem;
+  font-size: 1.12rem;
+  /* padding-left: rem; */
+  margin-left: 20%;
 }
 
 #main-kinderInfo-addr {
   font-size: 0.8rem;
   /* margin-top: 0.5rem; */
   margin-bottom: 0;
+  /* margin-left: 3rem; */
+  font-size: 1rem;
 }
 
 #main-kinderInfo-tel_no {
   /* display: inline-block; */
   font-size: 0.8rem;
+  font-size: 1rem;
   margin-bottom: 0;
+  /* margin-left: 3rem; */
+}
+
+#minihomeicon {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  margin-left: 5rem;
+  color: #83f261;
 }
 
 /* .main-kinderInfo-img {
