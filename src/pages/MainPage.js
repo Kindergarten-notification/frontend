@@ -56,6 +56,9 @@ const MainPage = () => {
         {kinders.length > 0 ? (
           kinders.map((k) => (
             <div className="main-kinderInfo">
+              <span id="minihomeicon" onClick={() => handleHomePage(k)}>
+                <FaHome />
+              </span>
               <div
                 id="main-kinderInfo-name"
                 onClick={() => handleKinderInfo(k)}
@@ -66,9 +69,6 @@ const MainPage = () => {
                 <p id="main-kinderInfo-addr">{k.addr}</p>
                 <p id="main-kinderInfo-tel_no">{k.tel_no}</p>
               </div>
-              <span id="minihomeicon" onClick={() => handleHomePage(k)}>
-                <FaHome />
-              </span>
 
               {/* <div className="main-kinderInfo-img">
                 <img id="main-kinderInfo-img" src={homeImg} alt="HOMEPAGE" />
