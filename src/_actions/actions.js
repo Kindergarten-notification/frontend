@@ -200,7 +200,7 @@ export function getPost(method, post_id, kinder_id, user_id) {
   switch (method) {
     case "GET":
       response = axios
-        .get(`/api/post/${post_id}?kinder_id=${kinder_id}`)
+        .get(`/api/post/${post_id}`)
         .then((res) => res.data)
         .catch((err) => console.log("failed get post", err));
       break;
@@ -214,7 +214,7 @@ export function getPost(method, post_id, kinder_id, user_id) {
       break;
     case "PATCH":
       response = axios
-        .patch(`/api/post/${post_id}?kinder_id=${kinder_id}&user_id=${user_id}`)
+        .patch(`/api/post/${post_id}?user_id=${user_id}`)
         .then((res) => {
           console.log("Completed update !");
         })
@@ -250,7 +250,7 @@ export function getNotification(method, notification_id, kinder_id, user_id) {
   switch (method) {
     case "GET":
       response = axios
-        .get(`/api/notification/${notification_id}?kinder_id=${kinder_id}`)
+        .get(`/api/notification/${notification_id}`)
         .then((res) => res.data);
       break;
     case "POST":
@@ -264,9 +264,7 @@ export function getNotification(method, notification_id, kinder_id, user_id) {
       break;
     case "PATCH":
       response = axios
-        .patch(
-          `/api/notification/${notification_id}?kinder_id=${kinder_id}&user_id=${user_id}`
-        )
+        .patch(`/api/notification/${notification_id}?user_id=${user_id}`)
         .then((res) => {
           console.log("Completed update !");
         });
@@ -301,9 +299,7 @@ export function getAlbum(method, album_id, kinder_id, user_id) {
   let response = null;
   switch (method) {
     case "GET":
-      response = axios
-        .get(`/api/album/${album_id}?kinder_id=${kinder_id}`)
-        .then((res) => res.data);
+      response = axios.get(`/api/album/${album_id}`).then((res) => res.data);
       break;
     case "POST":
       response = axios
@@ -316,9 +312,7 @@ export function getAlbum(method, album_id, kinder_id, user_id) {
       break;
     case "PATCH":
       response = axios
-        .patch(
-          `/api/album/${album_id}?kinder_id=${kinder_id}&user_id=${user_id}`
-        )
+        .patch(`/api/album/${album_id}?user_id=${user_id}`)
         .then((res) => {
           console.log("Completed update !");
         });

@@ -1,0 +1,48 @@
+.home-header {
+  /* margin-left: 35%; */
+
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+  margin-top: 20%;
+  /* width: 300px; */
+}
+
+.home-buttons-div {
+  /* margin: 100px; */
+  margin: 100px;
+}
+
+.home-main,
+.home-buttons {
+  background: linear-gradient(
+    90deg,
+    rgba(190, 252, 101, 0.99) 0%,
+    rgba(131, 242, 97, 0.99) 0.01%,
+    rgba(195, 241, 99, 0.99) 51.56%,
+    rgba(252, 240, 101, 0.99) 99.93%,
+    rgba(159, 247, 99, 0.629685) 99.94%,
+    rgba(131, 242, 97, 0.305956) 99.95%,
+    rgba(251, 233, 11, 0.00515625) 99.96%,
+    rgba(252, 240, 101, 0.99) 99.97%
+  );
+}
+
+.home-main {
+  margin: 2rem 0;
+  padding: 2rem 3rem;
+}
+
+.home-buttons {
+  color: #222;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 3px;
+  width: 80px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

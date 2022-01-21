@@ -4,10 +4,11 @@ import {
   MainPage,
   DetailPage,
   AuthPage,
-  CommunityPage,
+  HomePage,
   NotFoundPage,
-  NotGrantedPage,
+  // NotGrantedPage,
 } from "../pages";
+import { Post, Notification, Album } from "../pages/community/index";
 import Nav from "./nav/Nav";
 
 class App extends Component {
@@ -21,7 +22,10 @@ class App extends Component {
             <Route exact path="/detail" component={DetailPage} />
             <Route exact path="/auth/:kind" component={AuthPage} />
             {/* <Route exact path="/auth/join" component={AuthPage} /> */}
-            <Route exact path="/community" component={CommunityPage} />
+            <Route exact path="/home" component={HomePage} />
+            <Route exact path="/home/post" component={Post} />
+            <Route exact path="/home/notification" component={Notification} />
+            <Route exact path="/home/album" component={Album} />
             <Route component={NotFoundPage} />
           </Switch>
         </Router>

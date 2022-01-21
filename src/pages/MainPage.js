@@ -36,7 +36,7 @@ const MainPage = () => {
   function handleKinderInfo(k) {
     console.log(k.id);
     setCurrPage(k.id);
-    history.push("/detail", k);
+    history.push("/detail", k.id);
   }
 
   return (
