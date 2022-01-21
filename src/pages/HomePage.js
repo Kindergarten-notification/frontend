@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { getAlbum, getAlbums } from "../_actions/actions";
 
 import "./style/homepage.css";
@@ -12,7 +11,7 @@ const HomePage = () => {
   const location = useLocation();
 
   const kinder = location.state;
-  const [albums, setAlbums] = useState([]);
+  const [albums, setAlbums] = useState([{}]);
 
   useEffect(() => {
     const payload = dispatch(getAlbums(kinder.id)).payload; // album list
@@ -20,7 +19,7 @@ const HomePage = () => {
       setAlbums(data);
       console.log(data);
     });
-  });
+  }, []);
 
   const handleButtons = (e) => {
     history.push(`/home/${e.target.id}`, kinder);
@@ -56,6 +55,7 @@ const HomePage = () => {
           </p>
         </div>
       </div>
+      <div>{/** album list */}</div>
     </div>
   );
 };

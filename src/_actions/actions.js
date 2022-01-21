@@ -21,18 +21,20 @@ const instance = axios.create({
   baseURL: "http://localhost:8080", // 요청을 www.aa.com/user로 보낸다면, www.aa.com까지 기록
   headers: {
     "Content-Type": "application/json; charset=UTF-8",
-    // "Authorization": ,
+    "Access-Control-Allow-Origin": "*",
+    Authorization: localStorage.getItem("jwtToken"),
   },
 });
 
 export function loginUser(requestData) {
   const response = instance
     .post("/login", JSON.stringify(requestData))
-    .then((res) => {
-      console.log(`response : ${res.status}`); // response.status
-      console.log(`response header : ${res.headers.Authorization}`);
+    .then(
+      (res) => res.headers.Authorization
+      // console.log(`response : ${res.status}`); // response.status
+      // console.log(`response header : ${res.headers.Authorization}`);
       // jwt token 받기
-    })
+    )
     .then()
     .catch((err) => console.log("failed login", err));
 
@@ -67,7 +69,7 @@ export function joinUser(requestData) {
   const response = instance
     .post("/api/join", JSON.stringify(requestData))
     .then(
-      (res) => res.headers.Authorization
+      (res) => res // .headers.Authorization
       //   console.log(`response : ${res.status}`); // response.status
       //   console.log(`response header : ${res.headers.Authorization}`);
     )

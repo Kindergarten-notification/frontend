@@ -3,7 +3,8 @@ import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import {
   MainPage,
   DetailPage,
-  AuthPage,
+  LoginPage,
+  JoinPage,
   HomePage,
   NotFoundPage,
   // NotGrantedPage,
@@ -16,12 +17,13 @@ class App extends Component {
     return (
       <div>
         <Router>
-          <Nav />
+          {/* <Nav /> */}
           <Switch>
             <Route exact path="/" component={MainPage} />
             <Route exact path="/detail" component={DetailPage} />
-            <Route exact path="/auth/:kind" component={AuthPage} />
-            {/* <Route exact path="/auth/join" component={AuthPage} /> */}
+            {/* <Route exact path="/auth/:kind" component={AuthPage} /> */}
+            <Route exact path="/auth/login" component={LoginPage} />
+            <Route exact path="/auth/join" component={JoinPage} />
             <Route exact path="/home" component={HomePage} />
             <Route exact path="/home/post" component={Post} />
             <Route exact path="/home/notification" component={Notification} />

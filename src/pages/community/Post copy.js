@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { getPosts } from "../../_actions/actions";
 
@@ -8,13 +7,10 @@ import "../style/homepage.css";
 
 const Post = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const location = useLocation();
 
   const kinder = location.state;
-  const [posts, setPosts] = useState([
-    { title: "test", created_date: "2022.01.21" },
-  ]);
+  const [posts, setPosts] = useState([{}]);
   const [postNum, setPostNum] = useState(1);
 
   useEffect(() => {
@@ -24,11 +20,7 @@ const Post = () => {
       console.log(data);
       setPosts(data);
     });
-  }, []);
-
-  const handleButtons = (e) => {
-    history.push(`/home/${e.target.id}`, kinder);
-  };
+  });
 
   return (
     <div>
@@ -36,25 +28,41 @@ const Post = () => {
         <h5>{kinder.kinder_name}</h5>
       </div>
       <div className="home-buttons-div">
-        <button className="home-buttons" onClick={handleButtons}>
-          {" "}
-          홈{" "}
-        </button>
-        <button className="home-buttons" id="post" onClick={handleButtons}>
+        <button className="home-buttons"> 홈 </button>
+        <button className="home-buttons" id="post">
           공지사항
         </button>
-        <button className="home-buttons" id="album" onClick={handleButtons}>
+        <button className="home-buttons" id="album">
           앨범
         </button>
-        <button
-          className="home-buttons"
-          id="notification"
-          onClick={handleButtons}
-        >
+        <button className="home-buttons" id="notification">
           게시판
         </button>
+        <div className="home-main" style={{ borderRadius: "8px" }}>
+          <table>
+            <tr>
+              <th>번호</th>
+              <th>제목</th>
+              <th>등록일</th>
+            </tr>
+            {posts.length > 0 ? (
+              posts.map((p, idx) => (
+                <tr className="">
+                  <td>{idx + 1}</td>
+                  <td>{p.title}</td>
+                  <td>{p.created_date}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            )}
+          </table>
+        </div>
       </div>
-
       <div>{/** album list */}</div>
     </div>
   );
