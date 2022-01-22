@@ -1,32 +1,26 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Paytone+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Inter&display=swap');
-
 .detail-header {
   display: flex;
-  margin-left: auto;
+  justify-content: center;
 }
 
 .detail-header > h5 {
-  justify-content: center;
-  text-align: center;
-  margin-top: 20%;
-  margin-left: 50%;
-  width: 300px;
-  margin-top: 3%;
-  margin-left: 30%;
-  width: 70vw;
-  font-size: 2vw;
-  font-family: 'Inter';
+  margin-top: 5%;
+  width: 500px;
+  font-size: 4rem;
+  font-family: 'dongle';
+  color: #83f261;
 }
 
 .minihompage-button {
   background-color: #dde667;
   color: white;
   border-radius: 8px;
-  margin-left: 25vw;
+  margin-left: 400px;
   border: none;
-  font-family: 'Inter';
+  font-family: 'dongle';
+  font-size: 2rem;
+  width: 300px;
+  height: 45px;
 }
 
 .detail-info {
@@ -55,7 +49,6 @@
   display: inline-flex;
 }
 
-  
 .detail-kinder-header > h4 {
   font-size: 2.5vw;
   padding-left: 5%;
