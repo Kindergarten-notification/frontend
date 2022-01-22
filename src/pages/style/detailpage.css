@@ -1,0 +1,133 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Inter&display=swap');
+
+.detail-header {
+  display: flex;
+  margin-left: auto;
+}
+
+.detail-header > h5 {
+  justify-content: center;
+  text-align: center;
+  margin-top: 20%;
+  margin-left: 50%;
+  width: 300px;
+  margin-top: 3%;
+  margin-left: 30%;
+  width: 70vw;
+  font-size: 2vw;
+  font-family: 'Inter';
+}
+
+.minihompage-button {
+  background-color: #dde667;
+  color: white;
+  border-radius: 8px;
+  margin-left: 25vw;
+  border: none;
+  font-family: 'Inter';
+}
+
+.detail-info {
+  border: 3px solid #83f261;
+  width: 650px;
+  width: 70vw;
+  height: 40vw;
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-right: auto;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 15%;
+  padding-top: 3%;
+  padding-bottom: 80%;
+  padding-bottom: 40%;
+}
+
+.detail-kinder-header {
+  margin-top: 5%;
+  /* margin-left: 10%; */
+  border-bottom: 3px solid #83f261;
+  width: 15vw;
+  text-align: left;
+  height: 3vw;
+  display: inline-flex;
+}
+
+  
+.detail-kinder-header > h4 {
+  font-size: 2.5vw;
+  padding-left: 5%;
+  font-family: 'Dongle';
+}
+
+.babyicon {
+  width: 1.5vw;
+  display: inline-flex;
+  margin-right: 5%;
+}
+
+.detail-left-box {
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: inline-block;
+  display: block;
+  text-align: left;
+  height: 0.5vh;
+}
+
+.detail-info-list {
+  display: inline-block;
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 60vw;
+  height: 30vw;
+  display: flex;
+}
+
+.detail-list {
+  list-style-type: none;
+  margin-top: 5vw;
+  width: 35vw;
+  height: 35vw;
+}
+
+.detail-list-menu {
+  font-size: 1vw;
+  color: black;
+  padding: 0.5vw;
+  display: inline-flex;
+  width: 10vw;
+  margin-left: 1vw;
+  font-family: 'Inter';
+}
+
+.detail-list-menu1 {
+  font-size: 1vw;
+  font-weight: bold;
+  color: black;
+  padding: 0.5vw;
+  display: inline-flex;
+  width: 10vw;
+  font-family: 'Inter';
+}
+
+.detail-list-contents {
+  font-size: 1vw;
+  color: black;
+  padding: 0.5vw;
+  margin-left: 1vw;
+  display: inline-flex;
+}
+
+#myMap {
+  margin-top: 10%;
+  margin-left: 2%;
+  width: 35vw;
+  height: 22vw;
+  border: 1px solid blue;
+  display: flex;
+  float: right;
+}

@@ -1,0 +1,48 @@
+.main-kinders-header {
+  padding-left: 2rem;
+  margin: 0 20%;
+  padding-top: 5%;
+  padding-bottom: 1rem;
+
+  border-bottom: 1px solid #83f261;
+}
+
+.main-kinderInfo {
+  justify-content: center;
+  /* text-align: center; */
+  margin: 0 15%;
+  padding: 15px 50px;
+  cursor: pointer;
+  border-top: 1px solid #83f261;
+  border-bottom: 1px solid #83f261;
+}
+
+.main-kinderInfo-detail {
+  display: inline-block;
+  margin-left: 15%;
+}
+
+#main-kinderInfo-name {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+#main-kinderInfo-addr {
+  font-size: 0.8rem;
+  /* margin-top: 0.5rem; */
+  margin-bottom: 0;
+}
+
+#main-kinderInfo-tel_no {
+  /* display: inline-block; */
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+/* .main-kinderInfo-img {
+  display: inline-block;
+}
+#main-kinderInfo-img {
+  width: 10%;
+} */
