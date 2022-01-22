@@ -1,11 +1,11 @@
 /* Auth.js
  * - 상세정보 페이지
  */
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useLocation } from "react-router-dom";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { getDetailPage } from "../_actions/actions";
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { getDetailPage } from '../_actions/actions';
 import '../../src/components/style/style.css';
 
 const DetailPage = () => {
@@ -26,7 +26,7 @@ const DetailPage = () => {
   }, []);
 
   const handleHomePage = () => {
-    history.push("/home", kinder);
+    history.push('/home', kinder);
   };
 
   return (
@@ -34,15 +34,18 @@ const DetailPage = () => {
       <div className="detail-header">
         <h5>유치원 및 어린이집 세부 정보</h5>
       </div>
+
       <div className="detail-info">
         <div className="detail-left-box">
           <div className="detail-kinder-header">
             <div className="icon">
-                <img className="babyicon" alt="baby" src="img/babyicon.png" />
+              <img className="babyicon" alt="baby" src="img/babyicon.png" />
             </div>
             <h4>{kinder.kinder_name}</h4>
           </div>
-          <button className="minihompage-button" onClick={handleHomePage}>미니홈페이지 바로가기</button>
+          <button className="minihompage-button" onClick={handleHomePage}>
+            미니홈페이지 바로가기
+          </button>
         </div>
         <div className="detail-info-list">
           <div>
@@ -73,15 +76,19 @@ const DetailPage = () => {
               </li>
               <li>
                 <i className="detail-list-menu1">통학차량</i>
-                <span className="detail-list-contents">{kinder.vhcl_oprn_yn}</span>
+                <span className="detail-list-contents">
+                  {kinder.vhcl_oprn_yn}
+                </span>
               </li>
               <li>
                 <i className="detail-list-menu1">차량 운행 대수</i>
-                <span className="detail-list-contents">{kinder.opra_vhcnt}</span>
+                <span className="detail-list-contents">
+                  {kinder.opra_vhcnt}
+                </span>
               </li>
             </ul>
           </div>
-          <div id="myMap"></div> 
+          <div id="myMap"></div>
         </div>
       </div>
     </div>

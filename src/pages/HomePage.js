@@ -30,6 +30,7 @@ const HomePage = () => {
       <div className="home-header">
         <h5>{kinder.kinder_name}</h5>
       </div>
+
       <div className="home-buttons-div">
         <button className="home-buttons"> 홈 </button>
         <button className="home-buttons" id="post" onClick={handleButtons}>
@@ -45,15 +46,21 @@ const HomePage = () => {
         >
           게시판
         </button>
-        <div className="home-main" style={{ borderRadius: '8px' }}>
-          <p>원장님 인사말</p>
-          <p>
-            안녕하십니까 학부모님들 소중한 아이들을 {kinder.kinder_name}에
-            보내주셔서 정말 감사합니다.
-            ㅇ러ㅏ뫄롭ㅁㅈㄹ미ㅏㄹ어ㅏㅁ너린ㅇㄹㅇㄻㅇㄴ라ㅓ리ㅗㅟㅏㅇ럼ㅀㄶㅎㄹㅇㅎㅎㄴㄴㄴㄶㄶㅇ
-            ㅎㄴㅇㅎㄴㅇㄹㄴㄹㅇㅎㅇㄶㄹ호마ㅓ롲ㄷ목ㄷㅈㄱㄺㄷ짐러ㅗㅑㅏㄷㅈㅁ뢈돟ㅈㄴ렴랃ㅁ저ㅗㄻㅈㄷㅎㄷ졀핟묘젿ㄹㅇ.ㅜㅏㄹ;ㄷㅈㅎㄹ
-          </p>
-        </div>
+      </div>
+
+      <div className="home-main" style={{ borderRadius: '8px' }}>
+        <p>
+          <b>원장님 인사말</b>
+        </p>
+        <p>
+          안녕하십니까 학부모님들 소중한 아이들을 {kinder.kinder_name}에
+          보내주셔서 정말 감사합니다. 행복 유아교육을 위해 우리유치원에서는,
+          자연을 품고 꿈을 키우는 아이들! 사랑과 전문성을 지닌 교원!
+          격려해주시고 함께하는 부모님들! 모두가 한마음 되어 홀로 높아짐보다는
+          함께 넓어짐을 향하는 교육을 실천하고자 합니다. 우리유치원 홈페이지가
+          교육에 관심 있는 모든 분들의 만남과 정보 교류의 장이 되기를
+          소망합니다. 감사합니다.
+        </p>
       </div>
       <div>{/** album list */}</div>
     </div>
