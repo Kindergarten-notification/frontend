@@ -1,6 +1,6 @@
-import React from "react";
-import HeaderImg from "../../static/img/header-img.png";
-import "./header.css";
+import React from 'react';
+import HeaderImg from '../../static/img/header-img.png';
+import '../style/style.css';
 
 const Header = () => {
   return (

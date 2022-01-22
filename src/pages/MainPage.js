@@ -12,9 +12,7 @@ import Header from '../components/header/Header';
 import { getMainPage } from '../_actions/actions';
 
 import homeImg from '../static/img/Netflix-avatar.png';
-import './style/mainpage.css';
-
-// import "./mainpage.css";
+import '../../src/components/style/style.css';
 
 const MainPage = () => {
   const dispatch = useDispatch();

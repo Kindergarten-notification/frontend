@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import React, { Component } from 'react';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import {
   MainPage,
   DetailPage,
@@ -8,20 +8,19 @@ import {
   HomePage,
   NotFoundPage,
   // NotGrantedPage,
-} from "../pages";
-import { Post, Notification, Album } from "../pages/community/index";
-import Nav from "./nav/Nav";
+} from '../pages';
+import { Post, Notification, Album } from '../pages/community/index';
+import Nav from './nav/Nav';
 
 class App extends Component {
   render() {
     return (
       <div>
         <Router>
-          {/* <Nav /> */}
+          <Nav />
           <Switch>
             <Route exact path="/" component={MainPage} />
             <Route exact path="/detail" component={DetailPage} />
-            {/* <Route exact path="/auth/:kind" component={AuthPage} /> */}
             <Route exact path="/auth/login" component={LoginPage} />
             <Route exact path="/auth/join" component={JoinPage} />
             <Route exact path="/home" component={HomePage} />

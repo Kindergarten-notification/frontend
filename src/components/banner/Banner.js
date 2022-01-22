@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import "./banner.css";
-import BannerImg from "../../static/img/banner-img.png";
+import React, { useState, useEffect } from 'react';
+import '../style/style.css';
+import BannerImg from '../../static/img/banner-img.png';
 
 const Banner = () => {
   /*
@@ -24,9 +24,9 @@ const Banner = () => {
     <div
       className="banner"
       style={{
-        backgroundSize: "cover",
+        backgroundSize: 'cover',
         backgroundImage: BannerImg,
-        backgourndPosition: "center center",
+        backgourndPosition: 'center center',
       }}
     >
       <img className="banner-image" src={BannerImg} alt="BANNER" />
