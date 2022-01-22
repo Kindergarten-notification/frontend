@@ -1,11 +1,11 @@
 /* Auth.js
  * - 상세정보 페이지
  */
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import { getDetailPage } from '../_actions/actions';
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { getDetailPage } from "../_actions/actions";
 import '../../src/components/style/style.css';
 
 const DetailPage = () => {
@@ -17,7 +17,6 @@ const DetailPage = () => {
   // kinder 객체 안에 detail 정보 있습니다.
   const [kinder, setKinder] = useState({});
 
-   
   useEffect(() => {
     const payload = dispatch(getDetailPage(kinder_id)).payload;
     payload.then((data) => {
@@ -27,7 +26,7 @@ const DetailPage = () => {
   }, []);
 
   const handleHomePage = () => {
-    history.push('/home', kinder);
+    history.push("/home", kinder);
   };
 
   return (

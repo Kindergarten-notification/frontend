@@ -78,9 +78,8 @@
   height: 0.5vh;
 }
 
-.detail-right-box {
+.detail-info-list {
   display: inline-block;
-
   margin-top: 5%;
   margin-left: 5%;
   width: 60vw;
