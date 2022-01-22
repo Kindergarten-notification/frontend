@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useHistory, useLocation } from "react-router-dom";
-import { getAlbum, getAlbums } from "../_actions/actions";
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory, useLocation } from 'react-router-dom';
+import { getAlbum, getAlbums } from '../_actions/actions';
 
-import "./style/homepage.css";
+import '../../src/components/style/style.css';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -45,7 +45,7 @@ const HomePage = () => {
         >
           게시판
         </button>
-        <div className="home-main" style={{ borderRadius: "8px" }}>
+        <div className="home-main" style={{ borderRadius: '8px' }}>
           <p>원장님 인사말</p>
           <p>
             안녕하십니까 학부모님들 소중한 아이들을 {kinder.kinder_name}에

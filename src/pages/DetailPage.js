@@ -1,12 +1,12 @@
 /* Auth.js
  * - 상세정보 페이지
  */
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useLocation } from "react-router-dom";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { getDetailPage } from "../_actions/actions";
-import "./style/detailpage.css";
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { getDetailPage } from '../_actions/actions';
+import '../../src/components/style/style.css';
 
 const DetailPage = () => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const DetailPage = () => {
   }, []);
 
   const handleHomePage = () => {
-    history.push("/home", kinder);
+    history.push('/home', kinder);
   };
 
   return (

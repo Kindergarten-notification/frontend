@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import "./nav.css";
-import LogoImg from "../../static/img/nav-logo.png";
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import '../style/style.css';
+import LogoImg from '../../static/img/nav-logo.png';
 
 const Nav = () => {
   const [show, setShow] = useState(false);
@@ -15,29 +15,29 @@ const Nav = () => {
 
   // scroll listener
   useEffect(() => {
-    window.addEventListener("scroll", transitionNavBar);
+    window.addEventListener('scroll', transitionNavBar);
     return () => {
       // useEffect callback function
-      window.removeEventListener("scroll", transitionNavBar);
+      window.removeEventListener('scroll', transitionNavBar);
     };
   }, []);
 
   const handleJoin = () => {
     console.log(history);
-    history.push("/auth/join");
+    history.push('/auth/join');
   };
 
   const handleLogin = () => {
     console.log(history);
-    history.push("/auth/login");
+    history.push('/auth/login');
   };
 
   const handleMain = () => {
-    history.push("/");
+    history.push('/');
   };
 
   return (
-    <div className={`nav ${show && "nav_white"}`}>
+    <div className={`nav ${show && 'nav_white'}`}>
       <img onClick={handleMain} className="nav-logo" src={LogoImg} alt="LOGO" />
       <button onClick={handleJoin} className="nav-join">
         <span>Join</span>
