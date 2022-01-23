@@ -115,12 +115,11 @@
   display: inline-flex;
 }
 
-#myMap {
-  margin-top: 10%;
-  margin-left: 2%;
-  width: 35vw;
+#map {
+  margin-top: 20%;
+  margin-right: 5%;
+  width: 30vw;
   height: 22vw;
-  border: 1px solid blue;
   display: flex;
   float: right;
 }

@@ -6,7 +6,10 @@ import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { getDetailPage } from '../_actions/actions';
+import Map from './Map';
+import { Route } from 'react-router-dom';
 import '../../src/components/style/style.css';
+
 
 const DetailPage = () => {
   const dispatch = useDispatch();
@@ -34,7 +37,6 @@ const DetailPage = () => {
       <div className="detail-header">
         <h5>유치원 및 어린이집 세부 정보</h5>
       </div>
-
       <div className="detail-info">
         <div className="detail-left-box">
           <div className="detail-kinder-header">
@@ -88,7 +90,9 @@ const DetailPage = () => {
               </li>
             </ul>
           </div>
-          <div id="myMap"></div>
+          <Route path="/">
+            <Map/>
+          </Route>
         </div>
       </div>
     </div>
